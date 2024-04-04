@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_lms/Core/utils/Custom_noification_page.dart';
 import 'package:flutter_lms/Core/utils/FloatingActionButton.dart';
-import 'package:flutter_lms/Core/utils/Logo.dart';
 import 'package:flutter_lms/Core/utils/drawer.dart';
 import 'package:flutter_lms/Feature/welcome/views/welcome.dart';
 
@@ -115,13 +114,13 @@ class _MoshrefState extends State<Moshref> {
                           child: Stack(
                             children: [
                               const Positioned(
-                                left: 15,
+                                left: 20,
                                 top: 22,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
                                     Text(
-                                      '(المبرمج)',
+                                      'Programmer',
                                       textAlign: TextAlign.right,
                                       style: TextStyle(
                                         color: Colors.white,
@@ -131,7 +130,7 @@ class _MoshrefState extends State<Moshref> {
                                       ),
                                     ),
                                     Text(
-                                      'أحمد ماهر أحمد',
+                                      'أحمد ماهر',
                                       textAlign: TextAlign.right,
                                       style: TextStyle(
                                         color: Colors.white,
@@ -166,13 +165,13 @@ class _MoshrefState extends State<Moshref> {
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(
-                                  top: 70,
+                                  top: 50,
                                 ),
                                 child: Align(
                                   alignment: Alignment.center,
                                   child: Image.asset(
                                     'assets/img/1.png',
-                                    height: 200,
+                                    height: 400,
                                   ),
                                 ),
                               )
@@ -198,13 +197,13 @@ class _MoshrefState extends State<Moshref> {
                           child: Stack(
                             children: [
                               const Positioned(
-                                left: 17,
+                                left: 15,
                                 top: 22,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
                                     Text(
-                                      '(المصمم)',
+                                      'Ui Design',
                                       textAlign: TextAlign.right,
                                       style: TextStyle(
                                         color: Colors.white,
@@ -249,13 +248,13 @@ class _MoshrefState extends State<Moshref> {
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(
-                                  top: 80,
+                                  top: 50,
                                 ),
                                 child: Align(
                                   alignment: Alignment.center,
                                   child: Image.asset(
                                     'assets/img/2.png',
-                                    height: 200,
+                                    height: 400,
                                   ),
                                 ),
                               )
@@ -263,6 +262,829 @@ class _MoshrefState extends State<Moshref> {
                           ),
                         ),
                       ),
+
+// اسلام محمد
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Container(
+                          width: 98,
+                          height: 184,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: ShapeDecoration(
+                            color: const Color(0xFF474BF5),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(11),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              const Positioned(
+                                left: 30,
+                                top: 22,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      '/ط',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Text(
+                                      'اسلام محمد',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Positioned(
+                                left: -5,
+                                top: 50,
+                                child: Container(
+                                  width: 113,
+                                  height: 113,
+                                  decoration: const ShapeDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                          "https://f.top4top.io/p_2895d73ac1.png"),
+                                      fit: BoxFit.fill,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(21),
+                                        bottomRight: Radius.circular(11),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 75,
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Image.asset(
+                                    'assets/img/4.png',
+                                    height: 400,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+
+//محمود عادل
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Container(
+                          width: 98,
+                          height: 184,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: ShapeDecoration(
+                            color: const Color(0xFF474BF5),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(11),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              const Positioned(
+                                left: 30,
+                                top: 22,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      '/ط',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Text(
+                                      'محمود عادل',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Positioned(
+                                left: -5,
+                                top: 50,
+                                child: Container(
+                                  width: 113,
+                                  height: 113,
+                                  decoration: const ShapeDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                          "https://f.top4top.io/p_2895d73ac1.png"),
+                                      fit: BoxFit.fill,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(21),
+                                        bottomRight: Radius.circular(11),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 50,
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Image.asset(
+                                    'assets/img/6.png',
+                                    height: 400,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+//  عبد الباري محمد
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Container(
+                          width: 98,
+                          height: 184,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: ShapeDecoration(
+                            color: const Color(0xFF474BF5),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(11),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              const Positioned(
+                                left: 15,
+                                top: 22,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      '/ط',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Text(
+                                      'عبدالباري محمد',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Positioned(
+                                left: -5,
+                                top: 50,
+                                child: Container(
+                                  width: 113,
+                                  height: 113,
+                                  decoration: const ShapeDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                          "https://f.top4top.io/p_2895d73ac1.png"),
+                                      fit: BoxFit.fill,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(21),
+                                        bottomRight: Radius.circular(11),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 50,
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Image.asset(
+                                    'assets/img/10.png',
+                                    height: 400,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+
+// محمد عبدالله
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Container(
+                          width: 98,
+                          height: 184,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: ShapeDecoration(
+                            color: const Color(0xFF474BF5),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(11),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              const Positioned(
+                                left: 25,
+                                top: 22,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      '/ط',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Text(
+                                      'محمد عبدالله',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Positioned(
+                                left: -5,
+                                top: 50,
+                                child: Container(
+                                  width: 113,
+                                  height: 113,
+                                  decoration: const ShapeDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                          "https://f.top4top.io/p_2895d73ac1.png"),
+                                      fit: BoxFit.fill,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(21),
+                                        bottomRight: Radius.circular(11),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 40,
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Image.asset(
+                                    'assets/img/3.png',
+                                    height: 400,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+
+//احمد عيد
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Container(
+                          width: 98,
+                          height: 184,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: ShapeDecoration(
+                            color: const Color(0xFF474BF5),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(11),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              const Positioned(
+                                left: 50,
+                                top: 22,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      '/ط',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Text(
+                                      'أحمد عيد',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Positioned(
+                                left: -5,
+                                top: 50,
+                                child: Container(
+                                  width: 113,
+                                  height: 113,
+                                  decoration: const ShapeDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                          "https://f.top4top.io/p_2895d73ac1.png"),
+                                      fit: BoxFit.fill,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(21),
+                                        bottomRight: Radius.circular(11),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 50,
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Image.asset(
+                                    'assets/img/5.png',
+                                    height: 400,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+
+
+// أحمد عبد المولى
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Container(
+                          width: 98,
+                          height: 184,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: ShapeDecoration(
+                            color: const Color(0xFF474BF5),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(11),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              const Positioned(
+                                left: 12,
+                                top: 22,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      '/ط',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Text(
+                                      'أحمد عبد المولي',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Positioned(
+                                left: -5,
+                                top: 50,
+                                child: Container(
+                                  width: 113,
+                                  height: 113,
+                                  decoration: const ShapeDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                          "https://f.top4top.io/p_2895d73ac1.png"),
+                                      fit: BoxFit.fill,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(21),
+                                        bottomRight: Radius.circular(11),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 50,
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Image.asset(
+                                    'assets/img/7.png',
+                                    height: 400,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+
+// جرجس نبيل
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Container(
+                          width: 98,
+                          height: 184,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: ShapeDecoration(
+                            color: const Color(0xFF474BF5),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(11),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              const Positioned(
+                                left: 32,
+                                top: 22,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      '/ط',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Text(
+                                      'جرجس نبيل',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Positioned(
+                                left: -5,
+                                top: 50,
+                                child: Container(
+                                  width: 113,
+                                  height: 113,
+                                  decoration: const ShapeDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                          "https://f.top4top.io/p_2895d73ac1.png"),
+                                      fit: BoxFit.fill,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(21),
+                                        bottomRight: Radius.circular(11),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 14,
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Image.asset(
+                                    'assets/img/8.png',
+                                    height: 400,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+
+//  علاء هاني
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Container(
+                          width: 98,
+                          height: 184,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: ShapeDecoration(
+                            color: const Color(0xFF474BF5),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(11),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              const Positioned(
+                                left: 45,
+                                top: 22,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      '/ط',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Text(
+                                      'علاء هاني',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Positioned(
+                                left: -5,
+                                top: 50,
+                                child: Container(
+                                  width: 113,
+                                  height: 113,
+                                  decoration: const ShapeDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                          "https://f.top4top.io/p_2895d73ac1.png"),
+                                      fit: BoxFit.fill,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(21),
+                                        bottomRight: Radius.circular(11),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 10,
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Image.asset(
+                                    'assets/img/9.png',
+                                    height: 400,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+
+
+// عبدالرحمن محمد
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Container(
+                          width: 98,
+                          height: 184,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: ShapeDecoration(
+                            color: const Color(0xFF474BF5),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(11),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              const Positioned(
+                                left: 10,
+                                top: 22,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      '/ط',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Text(
+                                      'عبدالرحمن محمد',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Positioned(
+                                left: -5,
+                                top: 50,
+                                child: Container(
+                                  width: 113,
+                                  height: 113,
+                                  decoration: const ShapeDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                          "https://f.top4top.io/p_2895d73ac1.png"),
+                                      fit: BoxFit.fill,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(21),
+                                        bottomRight: Radius.circular(11),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 75,
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Image.asset(
+                                    'assets/img/11.png',
+                                    height: 400,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+
+
+//  أحمد عبد الحسيب
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Container(
+                          width: 98,
+                          height: 184,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: ShapeDecoration(
+                            color: const Color(0xFF474BF5),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(11),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              const Positioned(
+                                left: 2,
+                                top: 22,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      '/ط',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Text(
+                                      'أحمد عبد الحسيب',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Positioned(
+                                left: -5,
+                                top: 50,
+                                child: Container(
+                                  width: 113,
+                                  height: 113,
+                                  decoration: const ShapeDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                          "https://f.top4top.io/p_2895d73ac1.png"),
+                                      fit: BoxFit.fill,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(21),
+                                        bottomRight: Radius.circular(11),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 75,
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Image.asset(
+                                    'assets/img/11.png',
+                                    height: 400,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+
                     ],
                   ),
                 ),

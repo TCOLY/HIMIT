@@ -25,6 +25,7 @@ class Drawerr extends StatefulWidget {
 
 class _DrawerrState extends State<Drawerr> {
   bool circlur = true;
+
   @override
   void initState() {
     super.initState();
@@ -51,7 +52,8 @@ class _DrawerrState extends State<Drawerr> {
                     children: [
                       cubit.authModel != null
                           ? Text(
-                              "أهلا بك :  ${cubit.authModel?.f_Name}", //the model is back null
+                              "أهلا بك :  ${cubit.authModel?.f_Name}",
+                              //the model is back null
                               textAlign: TextAlign.right,
                               style: TextStyle(
                                 color: Colors.white,
@@ -106,24 +108,24 @@ class _DrawerrState extends State<Drawerr> {
                                   left: 15, right: 0, bottom: 20),
                               child: GestureDetector(
                                 onTap: () async {
-                                  await CacheNetwork.deleteCacheItem();
-
-                                  Future.delayed(Duration(seconds: 0), () {
-                                    Navigator.pushAndRemoveUntil(context,
+                                  await CacheNetwork.deleteCacheItem().then(
+                                    (value) {
+                                      Navigator.pushAndRemoveUntil(
+                                        context,
                                         MaterialPageRoute(builder: (context) {
-                                      return Login();
-                                    }), (route) => false);
-                                  });
+                                          return Login();
+                                        }),(route) => route.isFirst,
+                                      );
+                                    },
+                                  );
                                 },
                                 child: Align(
                                   alignment: Alignment.bottomRight,
                                   child: Padding(
                                     padding: const EdgeInsets.all(8.0),
-                                    child: Expanded(
-                                      child: Image.asset(
-                                        "assets/icon/LogoutIcon.png",
-                                        height: 26.h,
-                                      ),
+                                    child: Image.asset(
+                                      "assets/icon/LogoutIcon.png",
+                                      height: 26.h,
                                     ),
                                   ),
                                 ),

@@ -9,6 +9,7 @@ import 'package:flutter_lms/Core/utils/FloatingActionButton.dart';
 import 'package:flutter_lms/Core/utils/Logo.dart';
 import 'package:flutter_lms/Core/utils/drawer.dart';
 import 'package:flutter_lms/Feature/Auth_Feature/presentation/controller/cubit/auth_cubit_cubit.dart';
+import 'package:flutter_lms/Feature/natega/views/natega.dart';
 import 'package:flutter_lms/Feature/welcome/views/welcome.dart';
 
 class NategaaTkalf extends StatelessWidget {
@@ -19,11 +20,7 @@ class NategaaTkalf extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return backwards == null
-        ? Center(
-            child: Padding(
-              padding: EdgeInsets.only(top: 28),
-            ),
-          )
+        ? Natega()
         : Column(
             children: [
               ...backwards!.map(

@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last, avoid_unnecessary_containers
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_lms/Core/Network/local_Network.dart';
@@ -9,8 +7,8 @@ import 'package:flutter_lms/Core/utils/Custom_noification_page.dart';
 import 'package:flutter_lms/Core/utils/FloatingActionButton.dart';
 import 'package:flutter_lms/Core/utils/drawer.dart';
 import 'package:flutter_lms/Feature/Auth_Feature/presentation/controller/cubit/auth_cubit_cubit.dart';
-import 'package:flutter_lms/Feature/Auth_Feature/presentation/views/widgets/Custom_Loading_indicator.dart';
 import 'package:flutter_lms/Feature/askreya/views/widgets/helper_widgets.dart';
+import 'package:flutter_lms/Feature/lagna/views/lagna.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'widgets/widgetslagna.dart';
@@ -27,9 +25,7 @@ class Lagnaa extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthCubitState>(
-      listener: (context, state) {
-        // TODO: implement listener
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         final cubit = BlocProvider.of<AuthCubit>(context);
         cubit.login(user!, password);
@@ -37,7 +33,9 @@ class Lagnaa extends StatelessWidget {
             drawer: Drawerr(),
             floatingActionButton: FloatingActionButtonn(),
             backgroundColor: const Color.fromRGBO(25, 23, 44, 1),
-            body: cubit.authModel != null
+            body: cubit.authModel != null &&
+                    (cubit.authModel!.committeeNumber!.isNotEmpty &&
+                        cubit.authModel!.committee!.isNotEmpty)
                 ? SingleChildScrollView(
                     child: Column(
                       children: [
@@ -140,10 +138,12 @@ class Lagnaa extends StatelessWidget {
                                     children: [
                                       Row(),
                                       CustomTextLagna(
-                                        datee: "الدور :  الارضي",
+                                        datee:
+                                            "الدور :  ${cubit.authModel!.committee!.first['built']}",
                                       ),
                                       CustomTextLagna(
-                                        datee: "مكان اللجنة  :  مدرج 1",
+                                        datee:
+                                            "مكان اللجنة  : ${cubit.authModel!.committee!.first['place']}",
                                       ),
                                       Row(
                                         mainAxisAlignment:
@@ -198,10 +198,7 @@ class Lagnaa extends StatelessWidget {
                       ],
                     ),
                   )
-                : Center(
-                    child:
-                        CustomLoadinfIndicator(), //use custom louding indicator
-                  ));
+                : Lagna());
       },
     );
   }

@@ -30,7 +30,8 @@ class ExamCubit extends Cubit<ExamState> {
 
     try {
       final response = await http.get(
-        Uri.parse('https://server-hmit.onrender.com/application/exam-table'),
+        Uri.parse(
+            'https://server-hmit.onrender.com/application/exam-table-two'),
         headers: {'Authorization': token},
       );
 
@@ -46,7 +47,6 @@ class ExamCubit extends Cubit<ExamState> {
     }
   }
 }
-
 
 /*
 class Exam {
@@ -80,7 +80,8 @@ class Exam {
   String? type;
   String? classRoom;
   String? academicDivision;
-  List<Map<String, dynamic>>? days; // Changed type to List<Map<String, dynamic>>
+  List<Map<String, dynamic>>?
+      days; // Changed type to List<Map<String, dynamic>>
 
   Exam({
     required this.id,
@@ -92,8 +93,8 @@ class Exam {
 
   factory Exam.fromJson(Map<String, dynamic> json) {
     // Extracting the days list
-    List<Map<String, dynamic>>? daysList = (json['days'] as List<dynamic>)
-        .cast<Map<String, dynamic>>(); // Casting each element to the correct type
+    List<Map<String, dynamic>>? daysList = (json['days'] as List<dynamic>).cast<
+        Map<String, dynamic>>(); // Casting each element to the correct type
 
     return Exam(
       id: json['_id'],

@@ -22,12 +22,8 @@ class Gloss extends StatefulWidget {
 }
 
 class _GlossState extends State<Gloss> {
-  @override
-  void initState() {
-    LocalNotificationService.showbasicNotification(
-        massBody: 'رقم الجلوس معلن الان!');
-    super.initState();
-  }
+  
+  
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +35,7 @@ class _GlossState extends State<Gloss> {
               drawer: Drawerr(),
               floatingActionButton: FloatingActionButtonn(),
               backgroundColor: const Color.fromRGBO(25, 23, 44, 1),
-              body: cubit.authModel?.seatingNumbers != null
+              body: cubit.authModel != null && cubit.authModel!.seatingNumbers!.isNotEmpty
                   ? Container(
                       child: Center(
                         child: ListView(

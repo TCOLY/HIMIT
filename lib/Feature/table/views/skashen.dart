@@ -1,11 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last, avoid_unnecessary_containers, no_leading_underscores_for_local_identifiers
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:flutter_lms/Feature/table/views/events.dart';
+import 'package:flutter_lms/Feature/table/views/no_tables.dart';
 
 import '../../../Core/Network/local_Network.dart';
 import '../../Auth_Feature/presentation/views/widgets/Custom_Loading_indicator.dart';
@@ -27,13 +25,14 @@ class _SkashenState extends State<Skashen> {
 
   @override
   void initState() {
-    context.read<ScheduleCubit>().fetchSchedule(token!);
+    context
+        .read<ScheduleCubit>()
+        .fetchSchedule(token: token!, endPoint: 'schedule-section');
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-
     return BlocBuilder<ScheduleCubit, ScheduleState>(
       builder: (context, schState) {
         if (schState is ScheduleLoading) {
@@ -43,15 +42,7 @@ class _SkashenState extends State<Skashen> {
             child: CustomLoadinfIndicator(),
           ));
         } else if (schState is ScheduleError) {
-          return Center(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 88.0),
-              child: Text(
-                schState.errorMessage,
-                style: TextStyle(color: Colors.white, fontSize: 24),
-              ),
-            ),
-          );
+          return NoTables();
         } else if (schState is ScheduleLoaded) {
           return Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
             SizedBox(
@@ -72,7 +63,7 @@ class _SkashenState extends State<Skashen> {
               height: 66,
               child: ListView.builder(
                   reverse: true,
-                  itemCount: 7,
+                  itemCount: 6,
                   scrollDirection: Axis.horizontal,
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   itemBuilder: (context, index) {
@@ -206,7 +197,7 @@ List<Widget> Days = [
     style: TextStyle(color: Colors.white, fontSize: 30),
   ),
   Text(
-    "يوم الاتثنين",
+    "يوم الاثنين",
     style: TextStyle(color: Colors.white, fontSize: 30),
   ),
   Text(
@@ -221,10 +212,10 @@ List<Widget> Days = [
     "يوم الخميس",
     style: TextStyle(color: Colors.white, fontSize: 30),
   ),
-  Text(
+  /*Text(
     "يوم الحمعه",
     style: TextStyle(color: Colors.white, fontSize: 30),
-  ),
+  ),*/
 ];
 
 List<String> days = [
@@ -234,5 +225,5 @@ List<String> days = [
   "الثلاثاء",
   "الاربعاء",
   "الخميس",
-  "الجمعة"
+  // "الجمعة"
 ];

@@ -100,7 +100,7 @@ class Askreyaa extends StatelessWidget {
                           Column(
                             children: [
                               Text(
-                                ' تبداء دورة التربية العسكرية الحالية من تاريخ //${cubitaskaryadata.askreyaModel == null ? '' : cubitaskaryadata.askreyaModel!.startDate}',
+                                ' تبداء دورة التربية العسكرية الحالية من تاريخ /${cubitaskaryadata.askreyaModel == null ? '' : cubitaskaryadata.askreyaModel!.startDate}',
                                 style: TextStyle(
                                     fontSize: 11,
                                     fontFamily: "wolfex",

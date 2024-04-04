@@ -1,18 +1,11 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last, avoid_unnecessary_containers
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_lms/Core/utils/Custom_noification_page.dart';
-import 'package:flutter_lms/Core/utils/FloatingActionButton.dart';
-import 'package:flutter_lms/Core/utils/Logo.dart';
-import 'package:flutter_lms/Core/utils/drawer.dart';
-import 'package:flutter_lms/Feature/Auth_Feature/presentation/controller/cubit/auth_cubit_cubit.dart';
 import 'package:flutter_lms/Feature/Auth_Feature/presentation/views/widgets/Custom_Loading_indicator.dart';
 import 'package:flutter_lms/Feature/natega/controller/trakomy.dart';
+import 'package:flutter_lms/Feature/natega/views/natega.dart';
 import 'package:flutter_lms/Feature/natega/views/widgets/section_Item.dart';
-import 'package:flutter_lms/Feature/welcome/views/welcome.dart';
 
 import '../../../Core/Network/local_Network.dart';
 
@@ -34,17 +27,19 @@ class _NategaaTrakomyState extends State<NategaaTrakomy> {
   Widget build(BuildContext context) {
     return BlocBuilder<CumulativeCubit, CumulativeState>(
       builder: (context, state) {
-        print(state.toString());
         if (state is CumulativeError) {
-          return Center(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 18.0),
-              child: Text(
-                state.message,
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          );
+          print("-------->${state.toString()}");
+
+          // return Center(
+          //   child: Padding(
+          //     padding: const EdgeInsets.only(top: 18.0),
+          //     child: Text(
+          //       state.message,
+          //       style: TextStyle(color: Colors.white),
+          //     ),
+          //   ),
+          // );
+          return Natega();
         } else if (state is CumulativeLoaded) {
           return Column(
             children: [
@@ -129,19 +124,20 @@ class _NategaaTrakomyState extends State<NategaaTrakomy> {
                         fontSize: 15),
                   ),
                   /* SizedBox(
-              height: 98,
-            ),*/
+            height: 98,
+          ),*/
                 ],
               ),
             ],
           );
+        } else {
+          return Center(
+            child: Padding(
+              padding: EdgeInsets.only(top: 18),
+              child: CustomLoadinfIndicator(),
+            ),
+          );
         }
-        return Center(
-          child: Padding(
-            padding: EdgeInsets.only(top: 18),
-            child: CustomLoadinfIndicator(),
-          ),
-        );
       },
     ); /*BlocConsumer<AuthCubit, AuthCubitState>(
         builder: (_, state) {

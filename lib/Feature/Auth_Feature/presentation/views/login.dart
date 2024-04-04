@@ -29,7 +29,7 @@ class _LoginState extends State<Login> {
   void initState() {
     super.initState();
 
-    listenToNotificationStream();
+    // listenToNotificationStream();
   }
 
   listenToNotificationStream() {

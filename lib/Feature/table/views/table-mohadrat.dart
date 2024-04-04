@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last, avoid_unnecessary_containers, no_leading_underscores_for_local_identifiers
 
-import 'dart:ui';
-import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_lms/Core/utils/Custom_noification_page.dart';
@@ -10,11 +8,12 @@ import 'package:flutter_lms/Core/utils/Logo.dart';
 import 'package:flutter_lms/Core/utils/drawer.dart';
 import 'package:flutter_lms/Feature/table/controller/cubit/time_table_cubit.dart';
 import 'package:flutter_lms/Feature/table/schedule_cubit.dart';
-import 'package:flutter_lms/Feature/table/views/Navigation_Bar.dart';
 import 'package:flutter_lms/Feature/table/views/events.dart';
+import 'package:flutter_lms/Feature/table/views/no_tables.dart';
 import 'package:flutter_lms/Feature/table/views/skashen.dart';
 import 'package:flutter_lms/Feature/welcome/views/welcome.dart';
 import 'package:flutter_lms/Feature/welcome/views/widgets/Custom_List_View.dart';
+import 'package:intl/intl.dart';
 
 import '../../../Core/Network/local_Network.dart';
 import '../../Auth_Feature/presentation/views/widgets/Custom_Loading_indicator.dart';
@@ -35,7 +34,9 @@ class _TableMohadratState extends State<TableMohadrat> {
 
   @override
   void initState() {
-    context.read<ScheduleCubit>().fetchSchedule(token!);
+    context
+        .read<ScheduleCubit>()
+        .fetchSchedule(token: token!, endPoint: 'schedule');
     String weekday = DateFormat('EEEE').format(currentTime);
     if (weekday == "Saturday") {
       carouselCurrentIndex = 0;
@@ -157,6 +158,9 @@ class _TableMohadratState extends State<TableMohadrat> {
                     GestureDetector(
                       onTap: () {
                         setState(() {
+                          context
+                              .read<ScheduleCubit>()
+                              .fetchSchedule(token: token!, endPoint: 'schedule-section');
                           selected1 = true;
                           selected = false;
                         });
@@ -199,6 +203,9 @@ class _TableMohadratState extends State<TableMohadrat> {
                     GestureDetector(
                       onTap: () {
                         setState(() {
+                          context
+                              .read<ScheduleCubit>()
+                              .fetchSchedule(token: token!, endPoint: 'schedule');
                           selected = true;
                           selected1 = false;
                         });
@@ -251,13 +258,7 @@ class _TableMohadratState extends State<TableMohadrat> {
                                 child: CustomLoadinfIndicator(),
                               ));
                             } else if (schState is ScheduleError) {
-                              return Center(
-                                child: Text(
-                                  schState.errorMessage,
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 24),
-                                ),
-                              );
+                              return NoTables();
                             } else if (schState is ScheduleLoaded) {
                               return Column(
                                   crossAxisAlignment: CrossAxisAlignment.end,

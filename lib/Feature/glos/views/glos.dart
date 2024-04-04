@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, sort_child_properties_last
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_lms/Core/Network/local_Network.dart';
@@ -32,56 +31,47 @@ class Glos extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Container(
-                          padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                          child: TextButton.icon(
+                      Row(
+                        children: [
+                          Text(
+                            "العودة",
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontFamily: 'wolfexx',
+                              fontWeight: FontWeight.w700,
+                              height: 0.09,
+                            ),
+                          ),
+                          IconButton(
                             onPressed: () {
                               Navigator.pushReplacement(context,
                                   MaterialPageRoute(builder: (context) {
                                 return Welcome();
                               }));
                             },
-                            icon: Icon(
-                              Icons.arrow_back_ios_new_rounded,
-                              size: 17.0,
-                            ),
-                            label: Text(
-                              " العودة ",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: "wolfex",
-                                fontSize: 13,
-                              ),
+                            icon: const Icon(
+                              Icons.keyboard_arrow_right_sharp,
+                              color: Color.fromRGBO(82, 63, 237, 1),
+                              size: 35,
                             ),
                           ),
-
-                          margin: EdgeInsets.fromLTRB(305, 30, 0, 0),
-                          height: 35,
-                          width: 98,
-                          // alignment: Alignment.topRight,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(3),
-                              border: Border.all(
-                                color: const Color.fromRGBO(82, 63, 237, 1),
-                                width: 2,
-                              )),
-                        ),
+                        ],
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                       ),
-                      Container(
-                        child: Text(
-                          " أهلا بك  :  ${cubit.authModel?.f_Name} ${cubit.authModel?.l_Name}",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: "wolfexx",
-                              fontSize: 16),
-                        ),
-                        alignment: Alignment.topRight,
-                        margin: EdgeInsets.fromLTRB(5, 30, 15, 0),
-                      ),
+                      // Container(
+                      //   child: Text(
+                      //     " أهلا بك  :  ${cubit.authModel?.f_Name} ${cubit.authModel?.l_Name}",
+                      //     style: TextStyle(
+                      //         color: Colors.white,
+                      //         fontFamily: "wolfexx",
+                      //         fontSize: 16),
+                      //   ),
+                      //   alignment: Alignment.topRight,
+                      //   margin: EdgeInsets.fromLTRB(5, 30, 15, 0),
+                      // ),
                       SingleChildScrollView(
                         child: Container(
                           child: Column(

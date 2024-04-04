@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last, avoid_unnecessary_containers
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_lms/Core/Network/local_Network.dart';
@@ -13,6 +12,7 @@ import 'package:flutter_lms/Feature/welcome/views/welcome.dart';
 import '../controller/trakomy.dart';
 import 'natega-tkalf.dart';
 import 'natega-trakomy.dart';
+import 'natega.dart';
 
 class Nategaa extends StatefulWidget {
   const Nategaa({super.key});
@@ -36,20 +36,75 @@ class _NategaaState extends State<Nategaa> {
       builder: (context, state) {
         if (state is LoginLoudingState) {
           return Scaffold(
+            drawer: Drawerr(),
             backgroundColor: const Color.fromRGBO(25, 23, 44, 1),
             body: Center(child: CustomLoadinfIndicator()),
           );
         } else if (state is LoginFailureState) {
           return Scaffold(
+            drawer: Drawerr(),
             backgroundColor: const Color.fromRGBO(25, 23, 44, 1),
-            body: Center(
-              child: Text(
-                state.errorMessage,
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              ),
+            body: Column(
+              children: [
+                CustomAppBar(),
+                Row(
+                  children: [
+                    Text(
+                      "العودة",
+                      textAlign: TextAlign.right,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontFamily: 'wolfexx',
+                        fontWeight: FontWeight.w700,
+                        height: 0.09,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) {
+                          return Welcome();
+                        }));
+                      },
+                      icon: const Icon(
+                        Icons.keyboard_arrow_right_sharp,
+                        color: Color.fromRGBO(82, 63, 237, 1),
+                        size: 35,
+                      ),
+                    ),
+                  ],
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                ),
+                Spacer(),
+                Container(
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        "assets/img/natega.png",
+                        scale: 1.0,
+                        width: 204.77,
+                        height: 204.77,
+                      ),
+                    ],
+                  ),
+                ),
+                Text(
+                  "! لم يتم الاعلان عن اي نتيجة بعد ",
+                  style: TextStyle(
+                      color: Color.fromARGB(97, 255, 255, 255),
+                      fontFamily: "wolfexx",
+                      fontSize: 14),
+                ),
+                Spacer(
+                  flex: 2,
+                ),
+              ],
             ),
           );
         } else if (state is LoginSuccessState) {
+          // print("aaaaaaaaaa ${state.authModel.markers?.first ??''}");
           return Scaffold(
             drawer: Drawerr(),
             floatingActionButton: FloatingActionButtonn(),
@@ -129,11 +184,15 @@ class _NategaaState extends State<Nategaa> {
                                     print("Tapped");
                                     print("Tapped");
                                     print("Tapped");
-                                    context.read<CumulativeCubit>().fetchCumulative(token!);
+                                    context
+                                        .read<CumulativeCubit>()
+                                        .fetchCumulative(token!);
                                     setState(() {
                                       currentIndex = 2;
                                     });
-                                    context.read<CumulativeCubit>().fetchCumulative(token!);
+                                    context
+                                        .read<CumulativeCubit>()
+                                        .fetchCumulative(token!);
                                   },
                                   child: CustomNategaItem(
                                     text: "تراكمي",
@@ -180,8 +239,8 @@ class _NategaaState extends State<Nategaa> {
                               height: 10,
                             ),
                             Text(
-                              //"الحالة  : ${cubit.authModel!.studyCase}",
-                              "الحالة : مستجد  ",
+                              "الحالة  : ${state.authModel.studyCase}",
+                              // "الحالة : مستجد  ",
 
                               style: TextStyle(
                                   color: Colors.white,
@@ -227,129 +286,144 @@ class _NategaaState extends State<Nategaa> {
                           ],
                         ),
                         currentIndex == 0
-                            ? Column(
-                                children: [
-
-                                  ...state.authModel.markers!.map(
-                                    (e) => Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          width: 150,
-                                          height: 36.77,
-                                          decoration: ShapeDecoration(
-                                            shape: RoundedRectangleBorder(
-                                              side: BorderSide(
-                                                  width: 1.40,
-                                                  color: Color(0xFF523FED)),
-                                              borderRadius: BorderRadius.only(
-                                                topRight: Radius.circular(0),
-                                                bottomLeft: Radius.circular(7),
-                                                bottomRight: Radius.circular(0),
-                                                topLeft: Radius.circular(7),
-                                              ),
-                                            ),
-                                          ),
-                                          child: Center(
-                                            child: Text(
-                                              "${e['value']}",
-                                              style: TextStyle(
-                                                  color: Color.fromARGB(
-                                                      219, 255, 255, 255),
-                                                  fontFamily: "wolfexx",
-                                                  fontSize: 12),
-                                            ),
-                                          ),
-                                          margin: EdgeInsets.only(top: 20),
-                                        ),
-                                        Container(
-                                          width: 150,
-                                          height: 36.77,
-                                          decoration: ShapeDecoration(
-                                            shape: RoundedRectangleBorder(
-                                              side: BorderSide(
-                                                  width: 1.40,
-                                                  color: Color(0xFF523FED)),
-                                              borderRadius: BorderRadius.only(
-                                                topRight: Radius.circular(7),
-                                                bottomLeft: Radius.circular(0),
-                                                bottomRight: Radius.circular(7),
-                                                topLeft: Radius.circular(0),
-                                              ),
-                                            ),
-                                          ),
-                                          child: Center(
-                                            child: Text(
-                                              "${e['name']}",
-                                              style: TextStyle(
-                                                  color: Color.fromARGB(
-                                                      219, 255, 255, 255),
-                                                  fontFamily: "wolfexx",
-                                                  fontSize: 12),
-                                            ),
-                                          ),
-                                          margin: EdgeInsets.only(top: 20),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.end,
+                            ? (state.authModel.markers!.isNotEmpty
+                                ? Column(
                                     children: [
-                                      SizedBox(
-                                        height: 16,
-                                        width: 370,
+                                      ...state.authModel.markers!.map(
+                                        (e) => Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Container(
+                                              width: 150,
+                                              height: 36.77,
+                                              decoration: ShapeDecoration(
+                                                shape: RoundedRectangleBorder(
+                                                  side: BorderSide(
+                                                      width: 1.40,
+                                                      color: Color(0xFF523FED)),
+                                                  borderRadius:
+                                                      BorderRadius.only(
+                                                    topRight:
+                                                        Radius.circular(0),
+                                                    bottomLeft:
+                                                        Radius.circular(7),
+                                                    bottomRight:
+                                                        Radius.circular(0),
+                                                    topLeft: Radius.circular(7),
+                                                  ),
+                                                ),
+                                              ),
+                                              child: Center(
+                                                child: Text(
+                                                  "${e['value']}",
+                                                  style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          219, 255, 255, 255),
+                                                      fontFamily: "wolfexx",
+                                                      fontSize: 12),
+                                                ),
+                                              ),
+                                              margin: EdgeInsets.only(top: 20),
+                                            ),
+                                            Container(
+                                              width: 150,
+                                              height: 36.77,
+                                              decoration: ShapeDecoration(
+                                                shape: RoundedRectangleBorder(
+                                                  side: BorderSide(
+                                                      width: 1.40,
+                                                      color: Color(0xFF523FED)),
+                                                  borderRadius:
+                                                      BorderRadius.only(
+                                                    topRight:
+                                                        Radius.circular(7),
+                                                    bottomLeft:
+                                                        Radius.circular(0),
+                                                    bottomRight:
+                                                        Radius.circular(7),
+                                                    topLeft: Radius.circular(0),
+                                                  ),
+                                                ),
+                                              ),
+                                              child: Center(
+                                                child: Text(
+                                                  "${e['name']}",
+                                                  style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          219, 255, 255, 255),
+                                                      fontFamily: "wolfexx",
+                                                      fontSize: 12),
+                                                ),
+                                              ),
+                                              margin: EdgeInsets.only(top: 20),
+                                            )
+                                          ],
+                                        ),
                                       ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.end,
                                         children: [
+                                          SizedBox(
+                                            height: 16,
+                                            width: 370,
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              Text(
+                                                " جيد",
+                                                style: TextStyle(
+                                                    color: Colors.red,
+                                                    fontFamily: "wolfexx",
+                                                    fontSize: 15),
+                                              ),
+                                              Text(
+                                                " : التقدير ",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontFamily: "wolfexx",
+                                                    fontSize: 15),
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            height: 16,
+                                          ),
                                           Text(
-                                            " جيد",
+                                            "الدرجة:600 ",
                                             style: TextStyle(
-                                                color: Colors.red,
+                                                color: Colors.white,
                                                 fontFamily: "wolfexx",
                                                 fontSize: 15),
                                           ),
+                                          SizedBox(
+                                            height: 16,
+                                          ),
                                           Text(
-                                            " : التقدير ",
+                                            "النسبة  : % 65.07",
                                             style: TextStyle(
                                                 color: Colors.white,
                                                 fontFamily: "wolfexx",
                                                 fontSize: 15),
                                           ),
                                         ],
-                                      ),
-                                      SizedBox(
-                                        height: 16,
-                                      ),
-                                      Text(
-                                        "الدرجة:600 ",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontFamily: "wolfexx",
-                                            fontSize: 15),
-                                      ),
-                                      SizedBox(
-                                        height: 16,
-                                      ),
-                                      Text(
-                                        "النسبة  : % 65.07",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontFamily: "wolfexx",
-                                            fontSize: 15),
-                                      ),
+                                      )
                                     ],
                                   )
-                                ],
-                              )
-                            : currentIndex == 1
-                                ? NategaaTkalf(backwards: state.authModel.backwards?.length==0?null:state.authModel.backwards,)
-                                : NategaaTrakomy(),
+                                : Natega())
+                            : (currentIndex == 1
+                                ? NategaaTkalf(
+                                    backwards:
+                                        state.authModel.backwards!.isEmpty
+                                            ? null
+                                            : state.authModel.backwards,
+                                  )
+                                : NategaaTrakomy()),
                         SizedBox(
                           height: 100,
                         )

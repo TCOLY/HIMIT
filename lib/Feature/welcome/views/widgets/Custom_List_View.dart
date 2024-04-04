@@ -22,9 +22,7 @@ class _CustomItemSliderState extends State<CustomItemSlider> {
           child: Align(
             child: CarouselSlider(
               carouselController: controller,
-
               options: CarouselOptions(
-
                 initialPage: 0,
                 onPageChanged: (index, _) {
                   setState(() {
@@ -36,7 +34,8 @@ class _CustomItemSliderState extends State<CustomItemSlider> {
                 autoPlayCurve: Curves.easeIn,
                 enableInfiniteScroll: false,
                 autoPlay: false,
-                enlargeCenterPage: true, //slide
+                enlargeCenterPage: true,
+                //slide
 
                 autoPlayAnimationDuration: const Duration(milliseconds: 900),
                 viewportFraction: 0.8,
@@ -128,6 +127,7 @@ class Continerone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      clipBehavior: Clip.none,
       children: [
         GestureDetector(
           onTap: () {

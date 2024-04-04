@@ -100,9 +100,10 @@ class ScheduleCubit extends Cubit<ScheduleState> {
 }
 
 */
+import 'dart:convert';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
 
 class ScheduleState {}
 
@@ -125,11 +126,13 @@ class ScheduleError extends ScheduleState {
 class ScheduleCubit extends Cubit<ScheduleState> {
   ScheduleCubit() : super(ScheduleInitial());
 
-  Future<void> fetchSchedule(String token) async {
+  Future<void> fetchSchedule(
+      {required String token, required String endPoint}) async {
     emit(ScheduleLoading());
     try {
+      //schedule-section
       final response = await http.get(
-        Uri.https('server-hmit.onrender.com', '/application/schedule'),
+        Uri.https('server-hmit.onrender.com', '/application/$endPoint'),
         headers: {'Authorization': token},
       );
       print("response $response");
