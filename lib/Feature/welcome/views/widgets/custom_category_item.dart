@@ -10,6 +10,7 @@ class CustomTextt extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(link);
     return GestureDetector(
         onTap: () {
           Navigator.pushNamed(context, link);

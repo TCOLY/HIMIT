@@ -136,7 +136,7 @@ class DrawerItems extends StatelessWidget {
         verticalSpace(15),
         GestureDetector(
           onTap: () {
-            lunchToWebsite(Uri.parse('https://himit-kfs.com'));
+            lunchToWebsite(Uri.parse('https://mis.himit-kfs.edu.eg'));
           },
           child: const Text(
             "موقع المعهد",

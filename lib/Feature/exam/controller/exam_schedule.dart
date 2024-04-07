@@ -25,13 +25,13 @@ class ExamError extends ExamState {
 class ExamCubit extends Cubit<ExamState> {
   ExamCubit() : super(ExamInitial());
 
-  Future<void> fetchExams(String token) async {
+  Future<void> fetchExams(String token, String parm) async {
+    print(parm);
     emit(ExamLoading());
 
     try {
       final response = await http.get(
-        Uri.parse(
-            'https://server-hmit.onrender.com/application/exam-table-two'),
+        Uri.parse('https://server-hmit.onrender.com/application/$parm'),
         headers: {'Authorization': token},
       );
 

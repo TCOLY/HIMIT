@@ -26,130 +26,115 @@ class _AskreyaState extends State<Askreya> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthCubit, AuthCubitState>(
-      listener: (context, state) {},
-      builder: (context, state) {
-        final cubit = BlocProvider.of<AuthCubit>(context);
-        cubit.login(user!, password);
-
-        return cubit.authModel != null
-            ? Scaffold(
-                drawer: Drawerr(),
-                floatingActionButton: FloatingActionButtonn(),
-                backgroundColor: const Color.fromRGBO(25, 23, 44, 1),
-                body: SingleChildScrollView(
+    return Scaffold(
+        drawer: Drawerr(),
+        floatingActionButton: FloatingActionButtonn(),
+        backgroundColor: const Color.fromRGBO(25, 23, 44, 1),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              CustomAppBar(),
+              verticalSpace(10),
+              Row(
+                children: [
+                  Text(
+                    "العودة",
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontFamily: 'wolfexx',
+                      fontWeight: FontWeight.w700,
+                      height: 0.09,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) {
+                        return Welcome();
+                      }));
+                    },
+                    icon: const Icon(
+                      Icons.keyboard_arrow_right_sharp,
+                      color: Color.fromRGBO(82, 63, 237, 1),
+                      size: 30,
+                    ),
+                  ),
+                ],
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
+              ),
+              // Container(
+              //   padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+              //   child: TextButton.icon(
+              //     onPressed: () {
+              //       Navigator.pushReplacement(context,
+              //           MaterialPageRoute(builder: (context) {
+              //         return Welcome();
+              //       }));
+              //     },
+              //     icon: Icon(
+              //       Icons.arrow_back_ios_new_rounded,
+              //       size: 17.0.sp,
+              //     ),
+              //     label: Text(
+              //       "العودة",
+              //       style: TextStyle(
+              //         color: Colors.white,
+              //         fontFamily: "wolfex",
+              //         fontSize: 13,
+              //       ),
+              //     ),
+              //   ),
+              //
+              //   margin: EdgeInsets.fromLTRB(285, 25, 0, 0),
+              //   height: 36.h,
+              //   width: 98.w,
+              //   // alignment: Alignment.topRight,
+              //   decoration: BoxDecoration(
+              //       borderRadius: BorderRadius.circular(3),
+              //       border: Border.all(
+              //         color: const Color.fromRGBO(82, 63, 237, 1),
+              //         width: 2,
+              //       )),
+              // ),
+              // Container(
+              //   child: Text(
+              //     " أهلا بك  : ${cubit.authModel == null ? "" : cubit.authModel!.f_Name} ${cubit.authModel == null ? "" : cubit.authModel!.l_Name}",
+              //     style: TextStyle(
+              //         color: Colors.white,
+              //         fontFamily: "wolfexx",
+              //         fontSize: 16),
+              //   ),
+              //   alignment: Alignment.topRight,
+              //   margin: EdgeInsets.fromLTRB(5, 30, 15, 0),
+              // ),
+              SingleChildScrollView(
+                child: Container(
                   child: Column(
                     children: [
-                      CustomAppBar(),
-                      verticalSpace(10),
-                      Row(
-                        children: [
-                          Text(
-                            "العودة",
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontFamily: 'wolfexx',
-                              fontWeight: FontWeight.w700,
-                              height: 0.09,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {
-                              Navigator.pushReplacement(context,
-                                  MaterialPageRoute(builder: (context) {
-                                    return Welcome();
-                                  }));
-                            },
-                            icon: const Icon(
-                              Icons.keyboard_arrow_right_sharp,
-                              color: Color.fromRGBO(82, 63, 237, 1),
-                              size: 30,
-                            ),
-                          ),
-                        ],
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                      ),
-                      // Container(
-                      //   padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                      //   child: TextButton.icon(
-                      //     onPressed: () {
-                      //       Navigator.pushReplacement(context,
-                      //           MaterialPageRoute(builder: (context) {
-                      //         return Welcome();
-                      //       }));
-                      //     },
-                      //     icon: Icon(
-                      //       Icons.arrow_back_ios_new_rounded,
-                      //       size: 17.0.sp,
-                      //     ),
-                      //     label: Text(
-                      //       "العودة",
-                      //       style: TextStyle(
-                      //         color: Colors.white,
-                      //         fontFamily: "wolfex",
-                      //         fontSize: 13,
-                      //       ),
-                      //     ),
-                      //   ),
-                      //
-                      //   margin: EdgeInsets.fromLTRB(285, 25, 0, 0),
-                      //   height: 36.h,
-                      //   width: 98.w,
-                      //   // alignment: Alignment.topRight,
-                      //   decoration: BoxDecoration(
-                      //       borderRadius: BorderRadius.circular(3),
-                      //       border: Border.all(
-                      //         color: const Color.fromRGBO(82, 63, 237, 1),
-                      //         width: 2,
-                      //       )),
-                      // ),
-                      // Container(
-                      //   child: Text(
-                      //     " أهلا بك  : ${cubit.authModel == null ? "" : cubit.authModel!.f_Name} ${cubit.authModel == null ? "" : cubit.authModel!.l_Name}",
-                      //     style: TextStyle(
-                      //         color: Colors.white,
-                      //         fontFamily: "wolfexx",
-                      //         fontSize: 16),
-                      //   ),
-                      //   alignment: Alignment.topRight,
-                      //   margin: EdgeInsets.fromLTRB(5, 30, 15, 0),
-                      // ),
-                      SingleChildScrollView(
-                        child: Container(
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/img/askreya.png",
-                                scale: 1.0,
-                                width: 204.77.w,
-                                height: 204.77.h,
-                              ),
-                            ],
-                          ),
-                          margin: EdgeInsets.fromLTRB(0, 115, 0, 63),
-                        ),
-                      ),
-                      Text(
-                        textAlign: TextAlign.center,
-                        " !انت غير موجود في دورة التربية العسكرية الحالية ",
-                        style: TextStyle(
-                            color: Color.fromARGB(97, 255, 255, 255),
-                            fontFamily: "wolfex",
-                            fontSize: 16.spMin),
+                      Image.asset(
+                        "assets/img/askreya.png",
+                        scale: 1.0,
+                        width: 204.77.w,
+                        height: 204.77.h,
                       ),
                     ],
                   ),
-                ))
-            : Scaffold(
-                backgroundColor: const Color.fromRGBO(25, 23, 44, 1),
-                body: Center(
-                  child: CustomLoadinfIndicator(),
+                  margin: EdgeInsets.fromLTRB(0, 115, 0, 63),
                 ),
-              );
-      },
-    );
+              ),
+              Text(
+                textAlign: TextAlign.center,
+                " !انت غير موجود في دورة التربية العسكرية الحالية ",
+                style: TextStyle(
+                    color: Color.fromARGB(97, 255, 255, 255),
+                    fontFamily: "wolfex",
+                    fontSize: 16.spMin),
+              ),
+            ],
+          ),
+        ));
   }
 }

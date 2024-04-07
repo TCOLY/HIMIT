@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,11 @@ class AskaryaCubit extends Cubit<AskaryaState> {
       var data = jsonDecode(response.body);
 
       if (response.statusCode == 200) {
-        askreyaModel = AskreyaModel.fromJson(data);
+        if (response.body.toString() != "null") {
+          askreyaModel = AskreyaModel.fromJson(data);
+        } else {
+          askreyaModel = null;
+        }
         emit(AskaryaSuccess());
       } else {
         emit(

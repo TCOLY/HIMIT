@@ -3,7 +3,6 @@ import 'package:flutter_lms/Core/Network/local_Network.dart';
 import 'package:flutter_lms/Core/utils/support.dart';
 import 'package:flutter_lms/Feature/askreya/views/askreya.dart';
 import 'package:flutter_lms/Feature/askreya/views/askreyaa.dart';
-import 'package:flutter_lms/Feature/exam/views/exam-final.dart';
 import 'package:flutter_lms/Feature/exam/views/exam-medterm.dart';
 import 'package:flutter_lms/Feature/glos/views/glos.dart';
 import 'package:flutter_lms/Feature/glos/views/gloss.dart';
@@ -25,13 +24,12 @@ import 'package:flutter_lms/Feature/table-em/views/table.dart';
 import 'package:flutter_lms/Feature/table-em/views/team.dart';
 import 'package:flutter_lms/Feature/table/views/skashen.dart';
 import 'package:flutter_lms/Feature/table/views/table-mohadrat.dart';
-import 'package:flutter_lms/Feature/exam/views/exam-tkalf.dart';
 import 'package:flutter_lms/Feature/Auth_Feature/presentation/views/login.dart';
 import 'package:flutter_lms/Feature/exam/views/not-exam.dart';
 import 'package:flutter_lms/Feature/welcome/views/welcome.dart';
 
 Map<String, Widget Function(BuildContext)> appRoutes = {
-  "/": (context) => token == '' || token == null ? Login() : const Welcome(),
+  "/": (context) =>  Login() ,
   // "/welcome": (context) => Welcome(),
   "/table": (context) => const Tableex(),
   "/team": (context) => const Team(),
@@ -50,9 +48,7 @@ Map<String, Widget Function(BuildContext)> appRoutes = {
   "/tadres": (context) => const Tadres(),
   "/table-em": (context) => const Tableexam(),
   "/not-exam": (context) => const Notexam(),
-  "/exam-tkalf": (context) => const ExamTkalf(),
   "/exam-medterm": (context) => const ExamMedterm(),
-  "/exam-final": (context) => const ExamFinal(),
   "/table-mohadrat": (context) => const TableMohadrat(),
   "/mn-mahad": (context) => const MnMahad(),
   "/hadaf": (context) => const Hadaf(),

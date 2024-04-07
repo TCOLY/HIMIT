@@ -8,7 +8,7 @@ class CustomTextLagna extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 26),
+      padding: const EdgeInsets.only(bottom: 28),
       child: Text(
         datee,
         textAlign: TextAlign.right,
@@ -27,7 +27,7 @@ class Textyy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(15, 7, 0, 0),
+      margin: const EdgeInsets.fromLTRB(15, 7, 0, 0),
       width: 39,
       height: 46,
       decoration: BoxDecoration(
@@ -39,7 +39,7 @@ class Textyy extends StatelessWidget {
       child: Center(
         child: Text(
           date,
-          style: TextStyle(
+          style: const TextStyle(
               color: Colors.white, fontFamily: "wolfex", fontSize: 24),
         ),
       ),

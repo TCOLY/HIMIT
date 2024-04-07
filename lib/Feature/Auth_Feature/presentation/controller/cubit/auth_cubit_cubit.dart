@@ -26,9 +26,10 @@ class AuthCubit extends Cubit<AuthCubitState> {
         },
       );
       var data = jsonDecode(response.body);
-      print(data);
+     
       if (response.statusCode == 200) {
         authModel = AuthModel.fromJson(data);
+         print(authModel?.seatingNumbers);
         CacheNetwork.insertToCache(key: 'token', value: authModel!.token);
         emit(LoginSuccessState(authModel!));
       } else {

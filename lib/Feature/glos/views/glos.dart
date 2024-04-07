@@ -14,13 +14,10 @@ class Glos extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthCubit, AuthCubitState>(
-      listener: (context, state) {},
-      builder: (context, state) {
-        final cubit = BlocProvider.of<AuthCubit>(context);
-        cubit.login(user!, password);
-        return cubit.authModel != null
-            ? Scaffold(
+    
+        // cubit.login(user!, password);
+        return 
+             Scaffold(
                 drawer: Drawerr(),
                 floatingActionButton: FloatingActionButtonn(),
                 backgroundColor: const Color.fromRGBO(25, 23, 44, 1),
@@ -61,17 +58,7 @@ class Glos extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.center,
                       ),
-                      // Container(
-                      //   child: Text(
-                      //     " أهلا بك  :  ${cubit.authModel?.f_Name} ${cubit.authModel?.l_Name}",
-                      //     style: TextStyle(
-                      //         color: Colors.white,
-                      //         fontFamily: "wolfexx",
-                      //         fontSize: 16),
-                      //   ),
-                      //   alignment: Alignment.topRight,
-                      //   margin: EdgeInsets.fromLTRB(5, 30, 15, 0),
-                      // ),
+                      
                       SingleChildScrollView(
                         child: Container(
                           child: Column(
@@ -97,9 +84,9 @@ class Glos extends StatelessWidget {
                     ],
                   ),
                 ),
-              )
-            : Center(child: CustomLoadinfIndicator());
-      },
+              
     );
+      }
+    
   }
-}
+

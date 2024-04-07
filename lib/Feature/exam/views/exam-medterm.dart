@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last, avoid_unnecessary_containers, no_leading_underscores_for_local_identifiers
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_lms/Core/utils/Custom_noification_page.dart';
 import 'package:flutter_lms/Core/utils/FloatingActionButton.dart';
@@ -20,13 +21,14 @@ class ExamMedterm extends StatefulWidget {
 }
 
 class _ExamMedtermState extends State<ExamMedterm> {
-  List<String> items = ['جدول التخلفات', 'جدول الفاينل', 'جدول الميد ترم'];
 
-  int selecteditem = 2;
+  List<String> items = ["جدول الميد ترم", "جدول الفاينل","جدول التخلفات" ];
+
+  int selecteditem = 0;
 
   @override
   void initState() {
-    context.read<ExamCubit>().fetchExams(token!);
+    context.read<ExamCubit>().fetchExams(token!, "exam-table");
     super.initState();
   }
 
@@ -71,31 +73,42 @@ class _ExamMedtermState extends State<ExamMedterm> {
                     ),
                   ),
                   Column(children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10, right: 10),
-                      child: Row(
-                        children: items.asMap().entries.map((e) {
-                          int index = e.key;
-                          var value = e.value;
-
-                          return Expanded(
-                            child: GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  selecteditem = index;
-                                });
-                              },
-                              child: Padding(
-                                padding: index == 1
-                                    ? const EdgeInsets.symmetric(horizontal: 10)
-                                    : EdgeInsets.zero,
-                                child: ExamItem(
-                                    tilte: items[index],
-                                    isactive: selecteditem == index),
-                              ),
-                            ),
-                          );
-                        }).toList(),
+                    Directionality(textDirection: TextDirection.rtl,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10, right: 10),
+                        child: Row(
+                            children: List.generate(
+                                items.length,
+                                (index) => Expanded(
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            selecteditem = index;
+                                          });
+                                          print(index);
+                                          if (index == 0) {
+                                            context
+                                                .read<ExamCubit>()
+                                                .fetchExams(token!, "exam-table");
+                                          } else if (index == 1) {
+                                            context.read<ExamCubit>().fetchExams(
+                                                token!, "exam-table-one");
+                                          } else if (index == 2) {
+                                            context.read<ExamCubit>().fetchExams(
+                                                token!, "exam-table-two");
+                                          }
+                                        },
+                                        child: Padding(
+                                          padding: index == 1
+                                              ? const EdgeInsets.symmetric(
+                                                  horizontal: 10)
+                                              : EdgeInsets.zero,
+                                          child: ExamItem(
+                                              tilte: items[index],
+                                              isactive: selecteditem == index),
+                                        ),
+                                      ),
+                                    ))),
                       ),
                     ),
                     tableItem(yom: 'السبت', state: state),

@@ -167,7 +167,7 @@ class _NategaaState extends State<Nategaa> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            "نتيجة امتحان الترم الاول",
+                            "نتيجة امتحان الترم الاول والثاني",
                             style: TextStyle(
                               color: const Color.fromARGB(68, 255, 255, 255),
                               fontFamily: "wolfexx",
@@ -376,7 +376,7 @@ class _NategaaState extends State<Nategaa> {
                                                 MainAxisAlignment.end,
                                             children: [
                                               Text(
-                                                " جيد",
+                                                "${state.authModel.total}",
                                                 style: TextStyle(
                                                     color: Colors.red,
                                                     fontFamily: "wolfexx",
@@ -395,7 +395,7 @@ class _NategaaState extends State<Nategaa> {
                                             height: 16,
                                           ),
                                           Text(
-                                            "الدرجة:600 ",
+                                            "${state.authModel.grade} : الدرجة ",
                                             style: TextStyle(
                                                 color: Colors.white,
                                                 fontFamily: "wolfexx",
@@ -405,7 +405,7 @@ class _NategaaState extends State<Nategaa> {
                                             height: 16,
                                           ),
                                           Text(
-                                            "النسبة  : % 65.07",
+                                            " ${state.authModel.prcentage}  : النسبة",
                                             style: TextStyle(
                                                 color: Colors.white,
                                                 fontFamily: "wolfexx",

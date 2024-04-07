@@ -152,7 +152,7 @@ class Lagnaa extends StatelessWidget {
                                             CrossAxisAlignment.center,
                                         children: [
                                           SizedBox(
-                                            height: 30,
+                                            height: 44,
                                             child: ListView.builder(
                                                 itemCount: cubit.authModel!
                                                     .seatingNumbers?.length,
@@ -169,22 +169,16 @@ class Lagnaa extends StatelessWidget {
                                                   );
                                                 }),
                                           ),
-                                          Align(
-                                            alignment: Alignment.centerRight,
-                                            child: SizedBox(
-                                              height: 60,
-                                              child: CustomTextt(
-                                                datee: "  :  رقم الجلوس",
-                                              ),
-                                            ),
+                                          CustomTextLagna(
+                                            datee: "  :  رقم الجلوس",
                                           ),
                                         ],
                                       ),
-                                      CustomTextt(
+                                      CustomTextLagna(
                                         datee:
                                             "الشعبة  : ${cubit.authModel!.section}",
                                       ),
-                                      CustomTextt(
+                                      CustomTextLagna(
                                         datee:
                                             "الفرقة  : ${cubit.authModel!.squad}",
                                       ),

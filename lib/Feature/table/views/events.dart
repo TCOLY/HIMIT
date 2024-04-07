@@ -6,7 +6,6 @@ import 'package:flutter_lms/Feature/table/controller/cubit/time_table_cubit.dart
 import 'package:timeline_tile/timeline_tile.dart';
 
 import '../schedule_cubit.dart';
-import '../schedule_model.dart';
 
 class TimeLineWidget extends StatelessWidget {
   final bool isFirst;
@@ -31,7 +30,6 @@ class TimeLineWidget extends StatelessWidget {
     return BlocConsumer<TimeTableCubit, TimeTableState>(
       listener: (context, state) {},
       builder: (context, state) {
-        final cubit = BlocProvider.of<TimeTableCubit>(context);
         return SizedBox(
           height: 130,
           child: TimelineTile(
@@ -79,7 +77,7 @@ class TimeLineWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(
-                    //    "نظم معلومات محاسبية",
+                        //    "نظم معلومات محاسبية",
                         scheduleData.subjName.toString(),
                         // "${cubit.timetable[0].name}",
                         // "${cubit.timetable[1].name}",

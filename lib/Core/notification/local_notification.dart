@@ -46,7 +46,7 @@ class LocalNotificationService {
     );
     await flutterLocalNotificationsPlugin.periodicallyShow(
       1,
-      'Docdoc',
+      'Himit',
       "صلي علي النبي",
       RepeatInterval.hourly,
       notificationDetails,

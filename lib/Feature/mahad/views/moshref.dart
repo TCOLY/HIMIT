@@ -5,7 +5,12 @@ import 'package:flutter_lms/Core/utils/Custom_noification_page.dart';
 import 'package:flutter_lms/Core/utils/FloatingActionButton.dart';
 import 'package:flutter_lms/Core/utils/drawer.dart';
 import 'package:flutter_lms/Feature/welcome/views/welcome.dart';
-
+import 'package:url_launcher/url_launcher.dart';
+Future<void> lunchToWebsite(e) async {
+  if (!await launchUrl(e)) {
+    throw Exception('Could not launch $e');
+  }
+}
 class Moshref extends StatefulWidget {
   const Moshref({super.key});
 
@@ -101,81 +106,93 @@ class _MoshrefState extends State<Moshref> {
 
                       Padding(
                         padding: const EdgeInsets.only(right: 16, left: 16),
-                        child: Container(
-                          width: 98,
-                          height: 184,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            color: const Color(0xFF474BF5),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(11),
+                        child: GestureDetector(
+                          onTap: () {
+                                lunchToWebsite(Uri.parse(
+                                    'https://www.facebook.com/AhmedWolfex'));
+                              },
+                          child: Container(
+                            width: 98,
+                            height: 184,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: ShapeDecoration(
+                              color: const Color(0xFF474BF5),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(11),
+                              ),
                             ),
-                          ),
-                          child: Stack(
-                            children: [
-                              const Positioned(
-                                left: 20,
-                                top: 22,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      'Programmer',
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 11,
-                                        fontFamily: 'wolfex',
-                                        fontWeight: FontWeight.w700,
+                            child: Stack(
+                              children: [
+                                const Positioned(
+                                  left: 20,
+                                  top: 22,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Text(
+                                        'Programmer',
+                                        textAlign: TextAlign.right,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 11,
+                                          fontFamily: 'wolfex',
+                                          fontWeight: FontWeight.w700,
+                                        ),
                                       ),
-                                    ),
-                                    Text(
-                                      'أحمد ماهر',
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 11,
-                                        fontFamily: 'wolfex',
-                                        fontWeight: FontWeight.w700,
+                                      Text(
+                                        'أحمد ماهر',
+                                        textAlign: TextAlign.right,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 11,
+                                          fontFamily: 'wolfex',
+                                          fontWeight: FontWeight.w700,
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Positioned(
-                                left: -5,
-                                top: 50,
-                                child: Container(
-                                  width: 113,
-                                  height: 113,
-                                  decoration: const ShapeDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          "https://f.top4top.io/p_2895d73ac1.png"),
-                                      fit: BoxFit.fill,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(21),
-                                        bottomRight: Radius.circular(11),
-                                      ),
-                                    ),
+                                    ],
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(
+                                Positioned(
+                                  left: -5,
                                   top: 50,
-                                ),
-                                child: Align(
-                                  alignment: Alignment.center,
-                                  child: Image.asset(
-                                    'assets/img/1.png',
-                                    height: 400,
+                                  child: Container(
+                                    width: 113,
+                                    height: 113,
+                                    decoration: const ShapeDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                            "https://f.top4top.io/p_2895d73ac1.png"),
+                                        fit: BoxFit.fill,
+                                      ),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(21),
+                                          bottomRight: Radius.circular(11),
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                 ),
-                              )
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    top: 50,
+                                  ),
+                                  child: Align(
+                                    alignment: Alignment.center,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                lunchToWebsite(Uri.parse(
+                                    'https://www.facebook.com/AhmedWolfex'));
+                              },
+                                      child: Image.asset(
+                                        'assets/img/1.png',
+                                        height: 400,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -184,81 +201,93 @@ class _MoshrefState extends State<Moshref> {
 
                       Padding(
                         padding: const EdgeInsets.only(right: 16),
-                        child: Container(
-                          width: 98,
-                          height: 184,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            color: const Color(0xFF474BF5),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(11),
+                        child: GestureDetector(
+                          onTap: () {
+                                lunchToWebsite(Uri.parse(
+                                    'https://www.facebook.com/yousef.shehab.7315'));
+                              },
+                          child: Container(
+                            width: 98,
+                            height: 184,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: ShapeDecoration(
+                              color: const Color(0xFF474BF5),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(11),
+                              ),
                             ),
-                          ),
-                          child: Stack(
-                            children: [
-                              const Positioned(
-                                left: 15,
-                                top: 22,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      'Ui Design',
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 11,
-                                        fontFamily: 'wolfex',
-                                        fontWeight: FontWeight.w700,
+                            child: Stack(
+                              children: [
+                                const Positioned(
+                                  left: 15,
+                                  top: 22,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Text(
+                                        'Ui Design',
+                                        textAlign: TextAlign.right,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 11,
+                                          fontFamily: 'wolfex',
+                                          fontWeight: FontWeight.w700,
+                                        ),
                                       ),
-                                    ),
-                                    Text(
-                                      'يوسف شهاب',
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 11,
-                                        fontFamily: 'wolfex',
-                                        fontWeight: FontWeight.w700,
+                                      Text(
+                                        'يوسف شهاب',
+                                        textAlign: TextAlign.right,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 11,
+                                          fontFamily: 'wolfex',
+                                          fontWeight: FontWeight.w700,
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Positioned(
-                                left: -5,
-                                top: 50,
-                                child: Container(
-                                  width: 113,
-                                  height: 113,
-                                  decoration: const ShapeDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          "https://f.top4top.io/p_2895d73ac1.png"),
-                                      fit: BoxFit.fill,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(21),
-                                        bottomRight: Radius.circular(11),
-                                      ),
-                                    ),
+                                    ],
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(
+                                Positioned(
+                                  left: -5,
                                   top: 50,
-                                ),
-                                child: Align(
-                                  alignment: Alignment.center,
-                                  child: Image.asset(
-                                    'assets/img/2.png',
-                                    height: 400,
+                                  child: Container(
+                                    width: 113,
+                                    height: 113,
+                                    decoration: const ShapeDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                            "https://f.top4top.io/p_2895d73ac1.png"),
+                                        fit: BoxFit.fill,
+                                      ),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(21),
+                                          bottomRight: Radius.circular(11),
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                 ),
-                              )
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    top: 50,
+                                  ),
+                                  child: Align(
+                                    alignment: Alignment.center,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                lunchToWebsite(Uri.parse(
+                                    'https://www.facebook.com/yousef.shehab.7315'));
+                              },
+                                      child: Image.asset(
+                                        'assets/img/2.png',
+                                        height: 400,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -345,6 +374,89 @@ class _MoshrefState extends State<Moshref> {
                         ),
                       ),
 
+//احمد مصطفي رفعت 
+                  Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Container(
+                          width: 98,
+                          height: 184,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: ShapeDecoration(
+                            color: const Color(0xFF474BF5),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(11),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              const Positioned(
+                                left: 20,
+                                top: 22,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      '/ط',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Text(
+                                      'احمد مصطفي',
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                        fontFamily: 'wolfex',
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Positioned(
+                                left: -5,
+                                top: 50,
+                                child: Container(
+                                  width: 113,
+                                  height: 113,
+                                  decoration: const ShapeDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                          "https://f.top4top.io/p_2895d73ac1.png"),
+                                      fit: BoxFit.fill,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(21),
+                                        bottomRight: Radius.circular(11),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 55,
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Image.asset(
+                                    'assets/img/12.png',
+                                    height: 400,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+
+
 //محمود عادل
                       Padding(
                         padding: const EdgeInsets.only(right: 16),
@@ -426,6 +538,7 @@ class _MoshrefState extends State<Moshref> {
                           ),
                         ),
                       ),
+
 //  عبد الباري محمد
                       Padding(
                         padding: const EdgeInsets.only(right: 16),

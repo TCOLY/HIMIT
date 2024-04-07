@@ -30,13 +30,13 @@ class _GlossState extends State<Gloss> {
     return BlocConsumer<AuthCubit, AuthCubitState>(
         builder: (context, state) {
           final cubit = BlocProvider.of<AuthCubit>(context);
-          cubit.login(user!, password);
-          return Scaffold(
+          
+          return cubit.authModel!.seatingNumbers!=null?  Scaffold(
               drawer: Drawerr(),
               floatingActionButton: FloatingActionButtonn(),
               backgroundColor: const Color.fromRGBO(25, 23, 44, 1),
-              body: cubit.authModel != null && cubit.authModel!.seatingNumbers!.isNotEmpty
-                  ? Container(
+              body: 
+                   Container(
                       child: Center(
                         child: ListView(
                           children: [
@@ -184,7 +184,7 @@ class _GlossState extends State<Gloss> {
                         ),
                       ),
                     )
-                  : Glos());
+                  ): Glos();
         },
         listener: (context, state) {});
   }

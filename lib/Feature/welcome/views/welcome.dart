@@ -188,7 +188,7 @@ class _WelcomeState extends State<Welcome> {
                             padding: const EdgeInsets.fromLTRB(30, 15, 0, 0),
                             child: GestureDetector(
                               onTap: () {
-                                _launchUrl(Uri.parse('https://himit-kfs.com'));
+                                _launchUrl(Uri.parse('https://mis.himit-kfs.edu.eg'));
                               },
                               child: Container(
                                 width: 124,
@@ -214,7 +214,7 @@ class _WelcomeState extends State<Welcome> {
                                       GestureDetector(
                                         onTap: () {
                                           _launchUrl(Uri.parse(
-                                              'https://himit-kfs.com'));
+                                              'https://mis.himit-kfs.edu.eg'));
                                         },
                                         child: Text(
                                           "عرض الموقع",
